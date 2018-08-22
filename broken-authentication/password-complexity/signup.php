@@ -5,9 +5,15 @@
 
 <body>
   <div class="container">
-      <? if(($_POST['password'] != '') && ($_POST['password'] == $_POST['password_confirmation'])){ ?>
-        Signup successful!
-      <? } else {
+      <? if(($_POST['password'] != '') && ($_POST['password'] == $_POST['password_confirmation'])){
+
+        if(strlen($_POST['password']) < 8) { ?>
+          <br /><br />
+          <span class="alert alert-danger">Passwords should be 8 or more characters</span>
+        <? } else { ?>
+          Signup successful!
+        <? }
+      } else {
         if(($_POST['password'] != '')){ ?>
           <br /><br />
           <span class="alert alert-danger">Passwords do not match</span>

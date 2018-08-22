@@ -7,7 +7,7 @@
 
 <body>
   <div class="container">
-
+  <? error_reporting(E_ERROR | E_PARSE); ?>
   <? if(($_POST['username'] == 'admin') && ($_POST['password'] == 'admin')) { ?>
     <h1>You are logged in!</h1>
     <? $welcome_message_file = fopen('welcome.txt', filesize('welcome.txt'));

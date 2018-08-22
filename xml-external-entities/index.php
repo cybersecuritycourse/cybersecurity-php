@@ -11,19 +11,18 @@
         <div class="well col-md-4">
           <div>
 
-          <? libxml_disable_entity_loader (false);
+          <? libxml_disable_entity_loader (true);
 
            if($_POST['content'] && $_POST['content'] != '') {
               $xml_string = $_POST['content'];
 
               $dom = new DOMDocument;
 
-              $dom->loadXML($xml_string, LIBXML_NOENT | LIBXML_DTDLOAD);
+              $dom->loadXML($xml_string);
 
-              $creds = simplexml_import_dom($dom);
-              print $creds;
-              //print_r($dom->childNodes[0]->nodeValue);
+              $output = simplexml_import_dom($dom);
 
+              print $output;
 
            } else { ?>
           </div>

@@ -11,8 +11,7 @@
   <? if(($_POST['username'] == 'admin') && ($_POST['password'] == 'admin')) { ?>
     <h1>You are logged in!</h1>
   <? } elseif($_POST['username'] && $_POST['username'] =! '') {
-      # error_log($_SERVER['REMOTE_ADDR'].':'.$_SERVER['REMOTE_PORT'].' ['.http_response_code().']'.': Failed login attempt');
-      error_log('Login failed');
+      error_log($_SERVER['REMOTE_ADDR'].":".$_SERVER['REMOTE_PORT']." [".http_response_code().']: [DOMAIN=AUTHENTICATION] [EVENT=FAILURE] Login failed');
     ?>
     <br /><br />
     <div class="row">

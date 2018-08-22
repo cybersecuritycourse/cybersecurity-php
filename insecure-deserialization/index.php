@@ -1,5 +1,6 @@
 <? if($_POST['message'] && $_POST['message'] != '') {
-    setcookie("userdata", "message:".$_POST['message'].";username:john", time() + 30, "/");
+    setcookie("msgdata", "message:".$_POST['message'], time() + 30, "/");
+    setcookie("userdata", "username:john", time() + 30, "/");
   }
 ?>
 <html>
@@ -18,9 +19,11 @@
         <div class="well col-md-4">
           <div>
           <? if ($_GET['readmessage'] == true && isset($_COOKIE["userdata"])) {
-             $userdata = explode(";", $_COOKIE["userdata"]);
-             if(strpos($userdata[1], 'username') !== false){
-              $username = explode(":", $userdata[1]);
+
+             $userdata = $_COOKIE["userdata"];
+
+             if(strpos($userdata, 'username') !== false){
+              $username = explode(":", $userdata);
               print("Your username is: ".$username[1]);
              };
            } ?>

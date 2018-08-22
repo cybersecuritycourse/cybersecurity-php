@@ -7,8 +7,8 @@
 
 <body>
   <div class="container">
-  <!-- TODO: Change the default admin credentials from admin:admin -->
-  <? if(($_POST['username'] == 'admin') && ($_POST['password'] == 'admin')) { ?>
+  <? // TODO: Change the default admin credentials from admin:admin ?>
+  <? if(($_POST['username'] == 'admin') && ($_POST['password'] == 'somethingelse')) { ?>
     <h1>You are logged in!</h1>
   <? } elseif(($_POST['username'] == 'admin') && $_POST['password'] !='admin') { ?>
     <br /><br />

@@ -14,7 +14,7 @@
         <div class="well col-md-4">
           <div>
           <? if($_POST['content']) {
-            print($_POST['content']);
+            print(htmlspecialchars($_POST['content']));
            } else { ?>
           </div>
           <form action="index.php" method="POST">

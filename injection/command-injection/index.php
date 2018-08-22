@@ -11,12 +11,15 @@
         <h1>Find a file</h1>
       </div>
       <div class="row">
-        <div class="well col-md-4">
+        <div class="well col-md-8">
           <div>
           <? if($_POST['filename']) {
               $command  = "ls -ltr ".$_POST['filename']."";
-              $result = exec($command);
-              print("The command was: ".$command."<br/><br/>");
+
+              $escaped_command = escapeshellcmd($command);
+
+              $result = exec($escaped_command);
+              print("The command was: ".$escaped_command."<br/><br/>");
               print("The result was: ".$result."");
 
           } else { ?>

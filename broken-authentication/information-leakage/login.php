@@ -10,19 +10,10 @@
   <!-- Note to self: the admin credentials are admin:admin -->
   <? if(($_POST['username'] == 'admin') && ($_POST['password'] == 'admin')) { ?>
     <h1>You are logged in!</h1>
-  <? } elseif(($_POST['username'] == 'admin') && $_POST['password'] !='admin') { ?>
+  <? } elseif($_POST['username'] != '') { ?>
     <br /><br />
     <div class="row">
-      <span class="alert alert-danger">Your username is correct but your password is not!</span>
-      <br />
-      <br />
-      <a href="login.php">Go back and try again</a>
-    </div>
-  <? } elseif($_POST && ($_POST['username'] != 'admin') && ($_POST['password'] != 'admin')) { ?>
-
-    <br /><br />
-    <div class="row">
-      <span class="alert alert-danger">Both your username and password are incorrect!</span>
+      <span class="alert alert-danger">Login unsuccessful</span>
       <br />
       <br />
       <a href="login.php">Go back and try again</a>

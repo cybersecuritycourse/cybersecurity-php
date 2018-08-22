@@ -16,6 +16,12 @@
           <? if($_POST['message']) {
               $query  = "SELECT * FROM POSTS WHERE MESSAGE = '".$_POST['message']."'";
 
+              $query = $pdo->prepare('SELECT * FROM posts WHERE message = :message');
+
+              $message = $_POST['message'];
+
+              $query->execute(array('message' => $message));
+
               print("This is the query that would run: <br /><br />".$query);
 
           } else { ?>

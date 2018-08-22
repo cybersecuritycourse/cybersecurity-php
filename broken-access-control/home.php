@@ -5,7 +5,11 @@
   <body>
     <div class="container">
 
-      <? if($_GET['is_admin'] == true) { ?>
+
+      <?
+        // Change this to rely on the attributes of the currently logged-in user
+        if($_GET['is_admin']) {
+      ?>
       <span>
         You are viewing the admin section
       </span>
